@@ -1,1 +1,2 @@
 karlo reci nesta
+g++ -o test test.cpp `sdl-config --cflags --libs`    #######flagovi#######
