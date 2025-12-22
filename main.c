@@ -34,10 +34,23 @@ int main(int argc, char* argv[])
     } Camera;
     while(running) {
       while (SDL_PollEvent(&event)) {
-        if(event.type == SDL_QUIT) {
-          running = 0;
+        switch(event.type) {
+          case SDL_QUIT:
+            running = 0;
+            break;
+
+           case SDL_KEYDOWN:
+              switch(event.key.keysym.sym) {
+                
+                case SDLK_w:
+                    
+                    SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface-> format, 0x00, 0x00, 0x00));
+                    rect.y -= 10;
+                    break;
+              }
+           break;
         }
-      
+           
         SDL_FillRect(screenSurface, &rect, SDL_MapRGB(screenSurface -> format, 0xff, 0xff, 0xff));     
         SDL_UpdateWindowSurface(window);
       }
