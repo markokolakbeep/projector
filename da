@@ -1,3 +1,3 @@
 karlo reci nesta
 g++ -o test test.cpp `sdl-config --cflags --libs`    #######flagovi#######
-g++ -o test main.c 'pkg-config --cflags --libs sdl2'
+g++ -o test main.c `pkg-config --cflags --libs sdl2`
