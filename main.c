@@ -15,7 +15,23 @@ int main(int argc, char* argv[])
     SDL_Surface *screenSurface = SDL_GetWindowSurface(window);
     SDL_UpdateWindowSurface(window);  
     SDL_Event event; 
+    typedef struct {
+        float x;
+        float y;
+        float z;
     
+  
+    } Vec3;
+    typedef struct{
+        Vec3 position;
+        float yaw;
+        float pitch;
+        float speed;
+        float sens;
+
+
+
+    } Camera;
     while(running) {
       while (SDL_PollEvent(&event)) {
         if(event.type == SDL_QUIT) {
