@@ -40,12 +40,25 @@ int main(int argc, char* argv[])
             break;
 
            case SDL_KEYDOWN:
+              
+              SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface-> format, 0x00, 0x00, 0x00));
               switch(event.key.keysym.sym) {
                 
                 case SDLK_w:
-                    
-                    SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface-> format, 0x00, 0x00, 0x00));
                     rect.y -= 10;
+                    break;
+             
+                case SDLK_s:
+                    rect.y += 10;
+                    break;
+
+                
+                case SDLK_d:
+                    rect.x += 10;
+                    break;
+
+                case SDLK_a:
+                    rect.x -= 10;
                     break;
               }
            break;
